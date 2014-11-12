@@ -2,7 +2,7 @@
     'app/views/mainview'
 ], function () {
 
-	var i = 0;
+    var i = 0;
     return {
         MainView: arguments[i++]
     };

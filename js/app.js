@@ -2,19 +2,19 @@
     'jquery',
     'underscore',
     'views',
-	'models'
+    'models'
 ], function ($, _, Views, Models) {
 
     var initialize = function () {
 
-		var loginModel = new Models.LoginModel({
-			login: "vkopytin",
-			password: "temp123"
-		});
-	
+        var loginModel = new Models.LoginModel({
+            login: "vkopytin",
+            password: "temp123"
+        });
+    
         var mainView = new Views.MainView({
-			model: loginModel
-		});
+            model: loginModel
+        });
     };
 
     return {

@@ -6,7 +6,7 @@
         backbone: 'backbone',
         jquery: 'jquery-1.11.1',
         views: 'app/views/all-views',
-		models: 'app/models/all-models',
+        models: 'app/models/all-models',
         app: 'app'
     }
 });

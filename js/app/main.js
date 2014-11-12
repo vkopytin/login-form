@@ -5,8 +5,8 @@
         underscore: 'underscore',
         backbone: 'backbone',
         jquery: 'jquery-1.11.1',
-        views: 'app/views/all-views',
-        models: 'app/models/all-models',
+        views: 'app/views',
+        models: 'app/models',
         app: 'app'
     }
 });

@@ -1,18 +1,18 @@
 ﻿define([
     'jquery',
     'underscore',
-    'views',
-    'models'
-], function ($, _, Views, Models) {
+    'views/mainview',
+    'models/loginmodel'
+], function ($, _, MainView, LoginModel) {
 
     var initialize = function () {
 
-        var loginModel = new Models.LoginModel({
+        var loginModel = new LoginModel({
             login: "vkopytin",
             password: "temp123"
         });
     
-        var mainView = new Views.MainView({
+        var mainView = new MainView({
             model: loginModel
         });
     };

@@ -7,10 +7,7 @@
 
     var initialize = function () {
 
-        var loginModel = new LoginModel({
-            login: "vkopytin",
-            password: "temp123"
-        });
+        var loginModel = new LoginModel();
     
         var mainView = new MainView({
             model: loginModel

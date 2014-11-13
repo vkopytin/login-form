@@ -8,7 +8,7 @@
         el: $('#main-contents'),
 
         events: {
-            'submit form': 'doSearch'
+            'submit form': 'doLogin'
         },
 
         initialize: function () {
@@ -25,11 +25,23 @@
 
         },
 
-        doSearch: function (event) {
+        doLogin: function (event) {
+            event.preventDefault();
             var el = event.currentTarget;
 
-            var tbName = $('#login');
-            $('#message').html(tbName.val());
+            var tbLogin = $('#login');
+            var tbPassword = $('#password');
+            var login = this.model.save({
+                login: tbLogin.val(),
+                password: tbPassword.val()
+            }, {
+                success: function (res) {
+                    $('#message').html(res);
+                },
+                error: function (message) {
+                    $('#message').html(message);
+                }
+            });
 
             return false;
         }

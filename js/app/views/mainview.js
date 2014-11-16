@@ -1,50 +1,27 @@
 ﻿define([
     'underscore',
     'backbone',
-    'hogan'
-], function (_, Backbone, Hogan) {
+    'hogan',
+    'models/loginmodel',
+    'views/loginview'
+], function (_, Backbone, Hogan, LoginModel, LoginView) {
 
     var MainView = Backbone.View.extend({
-        el: $('#main-contents'),
 
-        events: {
-            'submit form': 'doLogin'
-        },
+        loginView: new LoginView({
+            el: $('#main-contents'),
+            model: new LoginModel()
+        }),
 
         initialize: function () {
             _.bindAll(this, 'render');
 
-            this.render();
-
         },
 
         render: function () {
-            var template = Hogan.compile($('#main-template').html());
 
-            $(this.$el).html(template.render(this.model.toJSON()));
-
+            this.loginView.render();
         },
-
-        doLogin: function (event) {
-            event.preventDefault();
-            var el = event.currentTarget;
-
-            var tbLogin = $('#login');
-            var tbPassword = $('#password');
-            var login = this.model.save({
-                login: tbLogin.val(),
-                password: tbPassword.val()
-            }, {
-                success: function (res) {
-                    $('#message').html(res);
-                },
-                error: function (message) {
-                    $('#message').html(message);
-                }
-            });
-
-            return false;
-        }
 
     });
 

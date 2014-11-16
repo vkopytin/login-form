@@ -1,6 +1,7 @@
 ﻿require.config({
     baseUrl: "/js/",
     paths: {
+        text: 'text',
         hogan: 'hogan-3.0.2.amd',
         underscore: 'underscore',
         backbone: 'backbone',

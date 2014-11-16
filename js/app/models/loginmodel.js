@@ -4,7 +4,7 @@
 ], function (_, Backbone) {
 
     var LoginModel = Backbone.Model.extend({
-        urlRoot: '/api/signup/login.json',
+        urlRoot: '/api/signup',
 
     });
     

@@ -1,17 +1,16 @@
 ﻿define([
     'jquery',
     'underscore',
-    'views/mainview',
-    'models/loginmodel'
-], function ($, _, MainView, LoginModel) {
+    'views/mainview'
+], function ($, _, MainView) {
 
     var initialize = function () {
-
-        var loginModel = new LoginModel();
     
         var mainView = new MainView({
-            model: loginModel
+            el: $('#main-contents'),
         });
+
+        mainView.render();
     };
 
     return {
